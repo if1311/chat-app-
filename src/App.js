@@ -3,16 +3,17 @@ import PropTypes from 'prop-types';
 
 import './App.css';
 import  Contact from './components/Contact';
+import './components/ContactList';
+import users from './components/ContactList';
 
-function App() {
-  return (
-    <div className="App">
-      <Contact name='Minnie Porter' avatar='https://randomuser.me/api/portraits/women/31.jpg' online />
-      <Contact name='Harry Herrera' avatar='https://randomuser.me/api/portraits/men/55.jpg' offline />
-      <Contact name='Same Carr' avatar='https://randomuser.me/api/portraits/men/94.jpg' online />
-    </div>
-  );
-}
+
+
+const App = () => (
+  <div>
+    {users.map(item => (
+  <Contact name={item.name} avatar={item.avatar} online={item.online} />))}
+  </div>
+);
 
 
 
